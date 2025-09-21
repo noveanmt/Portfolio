@@ -437,6 +437,17 @@ html, body {
     transition: background-color 0.3s ease;
 }
 
+.dot-360 {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
 .dot-security {
     cursor: pointer;
     height: 12px;
@@ -513,6 +524,10 @@ html, body {
 
     .active, .dot-security:hover {
         background-color: #717171;
+    }
+
+    .active, .dot-360:hover {
+    background-color: #717171;
     }
 
     .active, .dot:hover {
@@ -701,6 +716,29 @@ body {
     .footer a:hover {
         text-decoration: underline;
     }
+
+
+ul {
+
+    margin: 20px 0; 
+    color: #fff; 
+    font-size: 18px; 
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 10px; 
+    color: #fff;
+}
+
+.caption-text {
+    color: #ffff;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px;
+
+}
 
 @media (max-width: 768px) {
     .footer {
