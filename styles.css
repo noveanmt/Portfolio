@@ -448,6 +448,17 @@ html, body {
     transition: background-color 0.3s ease;
 }
 
+.dot-Troubleshooting {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
 .dot-security {
     cursor: pointer;
     height: 12px;
@@ -528,6 +539,10 @@ html, body {
 
     .active, .dot-360:hover {
     background-color: #717171;
+    }
+
+    .active, .dot-Troubleshooting:hover {
+        background-color: #717171;
     }
 
     .active, .dot:hover {
