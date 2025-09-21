@@ -13,7 +13,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Marshall's Portfolio</title>
+    <title>Projects - Marshall's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,73 +31,133 @@
         </ul>
     </nav>
 
+    <!-- Projects Page -->
     <section class="projects-page">
+        <h1>My Projects</h1>
 
-        <!-- About Me -->
+        <!-- TAMS Project -->
         <div class="project-details" id="tams">
-            <h2>About Me</h2>
+            <h2>TA Managment System (TAMS)</h2>
             <p>
-                I am a third-year student at the University of Cincinnati, studying Cybersecurity and Information Technology.
-                With a 4.0 GPA and a spot on the Dean's List every semester, I am committed to both academic excellence and continuous learning. <br /><br />
+                I developed and continue to enhance the TA Management Software (TAMS) to modernize and streamline the IT Learning Center’s time tracking and administrative
+                processes. Before TAMS, TAs signed in and out using paper logs, creating an administrative nightmare when verifying attendance for office hours.
+                The process took an average of 5 hours a week between three people to maintain, leaving them only able to discover attendance issues after the fact rather than addressing them proactavely. <br /><br />
 
-                I recenlty joined 84.51° on the Infrastructure and Cloud Technology team as a Service Desk CO-OP, where I provide front-line IT support and help identify
-                and resolve technical issues across enterprise systems. I also deploy and configure PCs and Macs, and I am working to automate redundant and time-intensive tasks to help make our team more efficient.
-                This role allows me to further strengthen my problem-solving skills, collaborate with engineering teams, and contribute to user-focused, cloud-based solutions in a fast-paced environment. <br /><br />
+                Seeing this gap in efficiency, I took the initiative to design and build a scalable solution from the ground up. Recognizing the problem, I didn’t just find a workaround, I
+                created a lasting solution. Through iterative prototyping and continuous refinement based on user feedback, I developed TAMS to consolidate and automate key processes,
+                significantly improving efficiency, accuracy, and accessibility. Now, student coordinators can proactively address attendance issues with a single click, transforming a
+                tedious 5 hour task shared by three people into a streamlined process that takes less than 10 seconds to verify and take action. This represents a 99.9% reduction in time spent, allowing coordinators to focus on supporting the TA's and students.
 
-                Beyond the classroom, I assist the IT Learning Center in streamlining their processes and overall efficiency by implementing technological solutions.
-                Over the summer I was also the Area Supervisor of Training and Auditing at Kings Island, where my team and I oversee training,
-                auditing, and the development of 400 seasonal lifeguards. These experiences have shaped my ability to manage teams, uphold high standards,
-                and create engaging training programs. <br /><br />
+                <br /><br />
+                But TAMS has since grown far beyond attendance tracking, TA scheduels, class assignments, and TA Notes . It now serves as a comprehensive session note system, replacing the previous
+                Microsoft Forms process with a more efficient and human centered design. Previously, TAs were required to manually enter up to 17 separate fields per session. They would ask students
+                a series of repetitive questions that often led to incorrect or incomplete data due to fatigue or time pressure especially when they had back-to-back or virtiual sessions. After listening
+                to feedback from our TAs, I worked closely with the team to rethink the entire session note experience.
 
             </p>
             <div class="slideshow-container">
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
-                    <div class="numbertext">1 / 9</div>
-                    <img src="MarshallOPO.jpg" style="width:100%">
+                    <div class="numbertext">1 / 15</div>
+                    <img src="TAMSHomeScreen.png" style="width:100%" alt="The TAMS home screen displays the Attendance Check dashboard at the top, followed by two columns: one for Clock In and the other for Clock Out, each showing recent punch records with photos and timestamps. At the bottom, there’s a TA Quick Search bar used to look up a TA’s status or assigned classes.">
+                    <div class="caption-text"></div>
                 </div>
 
                 <div class="mySlides fade">
-                    <div class="numbertext">2 / 9</div>
-                    <img src="MarshallKITree.jpeg" style="width:100%">
+                    <div class="numbertext">2 / 15</div>
+                    <img src="TAMSHomeScreenAttendanceCheck.png" style="width:100%" alt="TA Attendance Check screen showing scheduled start times and clock-in status for TAs. The interface displays the selected day and hour at the top (for example, “Monday at 9:00 AM”), followed by a table with columns labeled Scheduled Start Time, TA Name, and Clocked In Status. Clock-in statuses are visually color-coded, with green indicating “Yes” and red indicating “No” to help quickly assess attendance compliance.">
+                    <div class="caption-text"></div>
                 </div>
 
                 <div class="mySlides fade">
-                    <div class="numbertext">3 / 9</div>
-                    <img src="MarshallandTheFam.png" style="width:100%">
+                    <div class="numbertext">3 / 15</div>
+                    <img src="TAMSClassLookUp.png" style="width:100%" alt="TAMS home screen with the Class Lookup feature expanded. A user is typing a professor’s name into the TA Quick Search bar to view all courses that have assigned TAs. Below the search, a table displays Course Number, Course Name, Instructor, and Assigned TA. TA statuses are color-coded with green for clocked in, red for not clocked in, and yellow for on break. The home screen background continues to show recent TA clock-in and clock-out activity.">
+                    <div class="caption-text"></div>
                 </div>
 
                 <div class="mySlides fade">
-                    <div class="numbertext">4 / 9</div>
-                    <img src="MarshallandtheHannah.jpeg" style="width:100%">
+                    <div class="numbertext">4 / 15</div>
+                    <img src="TAMSClassLookUpTAPicture.png" style="width:100%" alt="A modal window is displayed on top of the TAMS home screen showing the user photo for the assigned TA. The background shows the Class Lookup feature, and the pop-up helps users visually identify the TA by displaying their profile image in the center of the screen after clicking on a class row.">
+                    <div class="caption-text"></div>
                 </div>
 
                 <div class="mySlides fade">
-                    <div class="numbertext">5 / 9</div>
-                    <img src="MarshallInservice.jpeg" style="width:100%">
+                    <div class="numbertext">5/ 15</div>
+                    <img src="TAMSRosterScreen.png" style="width:100%" alt="TA Roster screen displaying detailed user information for the selected TA, including profile photo, name, email, ID, and active status. A punch activity table below shows all time punches for the past several days, including clock-ins, break starts and ends, and missed punches. Additional sections (not visible in the image) include the TA’s schedule, class assignments, session notes, and internal notes.">
+                    <div class="caption-text"></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 15</div>
+                    <iframe id="kaltura_player"
+                            type="text/javascript"
+                            src="https://cdnapisec.kaltura.com/p/1492301/embedPlaykitJs/uiconf_id/53356032?iframeembed=true&entry_id=1_6koklutm&config[provider]={'widgetId':'1_32uprygh'}"
+                            style="width: 100%; height: 480px; border: 0;"
+                            allowfullscreen
+                            webkitallowfullscreen
+                            mozAllowFullScreen
+                            allow="autoplay *; fullscreen *; encrypted-media *"
+                            sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+                            title="Kaltura Player">
+                    </iframe>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 15</div>
+                    <img src="TAMSTimeCardScreen.png" style="width:100%" alt="TAMS Time Card screen showing a detailed list of TA punch activity for the selected date. The interface displays a list of TAs and their punch times on the left. When a TA is selected, their profile photo and punch details appear on the right, including name, punch type, date and time, and an option to flag the punch or enter a description. The view supports filtering by date and user for reviewing, editing, or flagging attendance records.">
+                    <div class="caption-text"></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 15</div>
+                    <img src="TAMSSessionNotesUnassigned.png" style="width:100%" alt="Unassigned Session Notes screen showing new session notes submitted by students during the check-in process. Each card displays the student's name, associated course, and the open timestamp. The notes have not yet been assigned to a TA and are available for either a student coordinator to assign or for a TA to claim through their TAMS login interface.">
+                    <div class="caption-text"></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">9 / 15</div>
+                    <img src="TAMSSessionNotesOpenView.png" style="width:100%" =" alt="Open Assigned Session Note screen displaying real-time details of an active session. The view includes the student's name, course subject, course number, assigned TA, and session timestamp. A section for entering session notes and marking the visit as successful is provided. At the bottom, a tab labeled “Other Options” allows coordinators to close or delete the session note if needed.">
+                    <div class="caption-text"></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">10 / 15</div>
+                    <img src="TAMSSessionNoteReviewPart1.png" style="width:100%" alt="Review Session Notes screen showing unreviewed session notes in a scrollable list on the left. When a session note is selected, detailed information is displayed on the right. This includes student name, primary campus, referral source, session ticket open and close dates, session duration SLA, course subject, course number, and session type. This view is used by student coordinators to evaluate sessions that TAs have marked as closed but still require review.">
+                    <div class="caption-text"></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">11 / 15</div>
+                    <img src="TAMSReviewSessionNotePart2.png" style="width:100%" alt="Review Session Notes screen showing detailed session information after scrolling down. This section includes the session type, reason for visit, assigned TA, and TA-submitted session notes. If the student has submitted feedback, it appears in a dedicated section below. Coordinators are presented with three actions: Reassign Session Note to request more details from the TA, Flag Session Note to escalate it for immediate review by upper leadership, or Close Session Note to finalize the review and archive the entry.">
+                    <div class="caption-text"></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">12 / 15</div>
+                    <img src="TAMSSessionNoteFlaggedEmail.png" style="width:100%" alt="Flagged Session Note email alert sent to upper leadership when a student coordinator flags a session note for review. The email highlights high importance and includes a summary table with details such as the student’s name, session time, type, course, assigned TA, and whether the visit was successful. Below the summary, it displays the visit reason, session notes, and the coordinator’s reason for flagging the note. A footer provides instructions for viewing the full session note within TAMS, including navigation to the flagged note in the TA’s profile.">
+                    <div class="caption-text"></div>
                 </div>
 
 
                 <div class="mySlides fade">
-                    <div class="numbertext">6 / 9</div>
-                    <img src="MarshallandEandAYouGotAFriendInMe.jpeg" style="width:100%">
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">7 / 9</div>
-                    <img src="MarshallandAshley.jpeg" style="width:100%">
+                    <div class="numbertext">13 / 15</div>
+                    <img src="TAMSUserClockInScreen.png" style="width:100%" alt="Clock-in interface screen displayed on the iPad for TAs at the IT Learning Center. The screen shows the current time and date at the top, followed by four large buttons: Clock In (black), Break Start (dark gray), Break End (light gray), and Clock Out (white). The background features red UC-branded artwork with Bearcat illustrations and university-themed graphics.">
+                    <div class="caption-text"></div>
                 </div>
 
 
                 <div class="mySlides fade">
-                    <div class="numbertext">8 / 9</div>
-                    <img src="MarshallandtheGrinch.jpeg" style="width:100%">
+                    <div class="numbertext">14 / 15</div>
+                    <img src="TAMSClockIn.png" style="width:100%" alt="When a TA selects their name, a popup appears displaying the current time, their full name, and a live photo captured by the device. This image is stored in the system as part of the timecard record for accountability and verification purposes.
+To prevent mispunches, the system includes built-in logic that ensures users cannot clock out unless they have clocked in, and cannot start or end breaks out of order. This safeguards data integrity and reduces timekeeping errors.">
+                    <div class="caption-text"></div>
                 </div>
 
                 <div class="mySlides fade">
-                    <div class="numbertext">9 / 9</div>
-                    <img src="MarshallandSisters.png" style="width:100%">
+                    <div class="numbertext">15 / 15</div>
+                    <img src="TAMSIpadSetup.jpg" style="width:100%" alt="An iPad on a tripod at the IT Learning Center displaying the TAMS (Teaching Assistant Management System) User interface for timekeeping">
+                    <div class="caption-text"></div>
                 </div>
 
                 <!-- Next and previous buttons -->
@@ -116,35 +176,359 @@
                 <span class="dot" onclick="currentSlide(6)"></span>
                 <span class="dot" onclick="currentSlide(7)"></span>
                 <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+                <span class="dot" onclick="currentSlide(14)"></span>
+                <span class="dot" onclick="currentSlide(15)"></span>
 
             </div>
 
 
             <p>
-                I am passionate about theme parks and the themed entertainment industry, and I serve as the President of the Themed Entertainment
-                Association (TEA) at UC. Our mission is to connect students with the themed entertainment industry by fostering creativity, professional
-                development, and collaboration. Through networking events, industry panels, and hands-on projects, we help students explore careers all
-                around the theme entertainment industry. Leading this club has allowed me to bridge my love for technology, training, and storytelling, helping
-                others discover and grow their passion for the industry. <br /><br />
+                The process now begins with a student-driven check-in form that automatically pre-populates key session information. This allows TAs to focus their attention on
+                supporting the student rather than collecting redundant data. TAs only need to complete three meaningful fields as the student has unknowingly provided the rest of the requires information dramatically
+                reducing cognitive load and improving the accuracy and consistency of the data. This redesign not only simplifies the workflow for TAs, but also enables the IT Learning Center to measure the
+                efficiency and completeness of session documentation by tracking the time from when a session note is opened to when it is closed.
+                <br /><br />
 
-                Outside of my academic and professional work, I am dedicated to giving back to the community through volunteering. I work with Saturday Hoops,
-                a program that mentors underprivileged kids through sports, art, and life skills, helping to build confidence, connection, and personal growth.
-                Similarly, I volunteer with Pause, where I support families of children with developmental disabilities, mental health challenges, and chronic
-                conditions by creating a fun and safe space for their kids while parents take time to recharge. These families face immense challenges every day,
-                and by providing them with a moment of respite, we allow them to return to their responsibilities feeling refreshed and supported. Beyond just providing
-                care, Pause is about creating connections letting these families know they are not alone. <br /><br />
+                The new process has also implemented a robust review and flagging system, giving student coordinators the ability to proactively monitor session quality. 
+                Student feedback is now directly tied to session notes, providing a more transparent and actionable view of how well we’re supporting academic success. Session notes can be reopened or
+                flagged for a follow-up which enhances both oversight and support for students and TAs.
 
-                I thrive on creativity and innovation, whether it's developing new training strategies, integrating technology into operations, or finding unique
-                solutions to challenges. My passion lies in making processes not just functional, but engaging and effective-blending structure with adaptability
-                to bring out the best in both people and systems. Whether it's through training, themed entertainment, or mentorship, I am driven to create experiences
-                that are both meaningful and memorable. <br /><br />
+                This evolution reflects one of my core beliefs that well designed systems bring out the best in both people and processes; empowering users while driving meaningful impact.
             </p>
+
+            <p><b>Skills Used</b>: Data Management, Documentation, Microsoft Power Platform, Microsoft 365 Intergration, SharePoint, UX/Ui Design, Project Managment, Troubleshooting</p>
+
+        </div>
+
+        <!-- 360 Training-->
+        <div class="project-details" id="360-Training">
+            <h2> MTN Training Solutions: 360 Training</h2>
+            <p>
+                After four years as a lifeguard, I noticed a recurring issue in traditional lifeguard training:
+                a strong emphasis on reacting to emergencies, with far less focus on proactively
+                recognizing and preventing them. While emergency response is critical, the foundation of effective
+                lifeguarding is prevention. Being able to identify a Guest in Distress (GID) before an incident occurs.
+
+                When I became a Lifeguard Instructor in 2024, I knew our training methods needed a serious upgrade.
+                PowerPoint presentations filled with static information were no longer engaging or effective for today's learners.
+                They didn’t align with the real-world skills lifeguards would be using on stand especially
+                scanning, pattern recognition, and decision-making under pressure because we were just talking about them.
+
+                One of the biggest challenges was preparing new guards before their first day on stand with actuall guest in their zone of protection,
+                especially since my facility operates seasonally. I saw this limitation not as a barrier but as an opportunity to innovate.
+</p>
+                <h3>The Solution: Immersive, Low-Stakes Practice Environments</h3>
+
+                <p>
+                    I launched the <strong><a href="https://noveanmt.github.io/360Training/" target="_blank" rel="noopener noreferrer">MTN Training Solutions: 360 Lifeguard Training Program</a></strong>, a scalable and immersive training tool
+                    designed to simulate real-world scanning environments. <br />
+                    <ul>
+                        <li>Bring the behaviors we teach in the classroom to life through interactive practice</li>
+                        <li>Create a low-stakes environment for trainees to receive feedback and develop instinctual recognition</li>
+                        <li>Build neural networks around what GIDs look like and how different factors influence recognition</li>
+                        <li>Help candidates develop confidence before they ever go on stand</li>
+                    </ul>
+                </p><p>
+
+                The training uses 360-degree video and VR environments to show dynamic, waterpark scenes
+                from the perspective of a lifeguard. Trainees are asked to scan for GIDs, identify patterns, and react
+                all while receiving real-time coaching or after-action feedback. The prototype shown was accessible starting on a desktop , giving lifeguards a way to build scanning fluency
+                even without physical access to the pool. Since then, I’ve continued refining the training, enhancing realism
+                and implementing VR for even greater immersion. This program is now a core part of our pre-season training and serves as a vital bridge between the classroom knolage
+                and in park performance. By giving trainees realistic, repeatable opportunities to practice scanning,
+                we equip them to be not just reactive, but proactive lifesavers.
+                <br/><br/>
+                This initiative reflects my belief that training should evolve with the needs of its audience. It’s not just about checking off a certification. 
+                For me it’s about creating a culture of vigilance, adaptability, and confidence. With the right tools and systems in place, we can help lifeguards 
+                truly understand their role, and empowering them to act before a rescue is ever needed, and equiping them to be successful from day one.
+                </p>
+
+    <!-- Slideshow container for Security Camera Project -->
+    <div class="slideshow-container 306-training-slideshow">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides-360 fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="StXTrainingPrototype.jpg" style="width:100%" alt="Inital Prototype">
+        </div>
+
+        <div class="mySlides-360 fade">
+            <div class="numbertext">2 / 5</div>
+            <img src="TidalWaveBayEmpty.jpg" style="width:100%" alt="Empty Zone of Protection Example Photo">
+        </div>
+
+        <div class="mySlides-360 fade">
+            <div class="numbertext">3 / 5</div>
+            <img src="TidalWithBilly.jpg" style="width:100%" alt="Zone of Protection with a vigilance awareness training manikin">
+        </div>
+
+        <div class="mySlides-360 fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="TidalMidDay.jpg" style="width:100%" alt="Zone of Protection in the middle of the day with more guest in the Zone of Protection">
+        </div>
+
+        <div class="mySlides-360 fade ">
+            <div class="numbertext">5 / 5</div>
+            <img src="TropicalPlunge.jpg" style="width:100%" alt="Slide Runout Example to help teach the new scanning technique">
+        </div>
+
+
+        <!-- Next and Previous Buttons -->
+        <a class="prev" onclick="plusSlides360(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides360(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <!-- The dots/circles-->
+    <div style="text-align:center">
+        <span class="dot-360" onclick="currentSlide360(1)"></span>
+        <span class="dot-360" onclick="currentSlide360(2)"></span>
+        <span class="dot-360" onclick="currentSlide360(3)"></span>
+        <span class="dot-360" onclick="currentSlide360(4)"></span>
+        <span class="dot-360" onclick="currentSlide360(5)"></span>
+    </div>
+
+    <p><b>Skills Used</b>: 360 Video Editing, DaVinci Resolve (In Progress), HTML, CSS, JavaScript, Web Development, Instructional Design, UX Design, Problem-Solving, VR Simulation, Unity (In Progress)</p>
+
+        </div>
+
+        <!-- Security Camera Installation -->
+        <div class="project-details" id="security-camera">
+            <h2> EyeSee - Security Camera Installation</h2>
+            <p>
+                To enhance security in off-campus housing, I designed and deployed a private surveillance network integrating IP cameras, AI-driven event analytics,
+                and a locally hosted Blue Iris server. This system provided real-time monitoring, eliminated cloud storage reliance, and successfully deterred
+                burglars in five incidents while maintaining 95% uptime. <br />
+
+                <!-- Slideshow container for Security Camera Project -->
+                <div class="slideshow-container security-camera-slideshow">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides-security fade">
+                        <div class="numbertext">1 / 5</div>
+                        <img src="SecurityCameraNetwork.jpg" style="width:100%" alt="Security Camera Image Example">
+                    </div>
+
+                    <div class="mySlides-security fade">
+                        <div class="numbertext">2 / 5</div>
+                        <img src="EyeSeeHouseCam.jpeg" style="width:100%" alt="Security Camera Installation 2">
+                    </div>
+
+                    <div class="mySlides-security fade">
+                        <div class="numbertext">3 / 5</div>
+                        <img src="EyeSeeTreeCam.jpeg" style="width:100%" alt="Security Camera Installation 3">
+                    </div>
+
+                    <div class="mySlides-security fade">
+                        <div class="numbertext">4 / 5</div>
+                        <img src="EyeSeeRoseHoseCamera.jpeg" style="width:100%" alt="Security Camera Installation 3">
+                    </div>
+
+                    <div class="mySlides-security fade">
+                        <div class="numbertext">5 / 5</div>
+                        <img src="EyeSeeHouseSimpleNetworkDiagram.jpg" style="width:100%" alt="Security Camera Installation 3">
+                    </div>
+
+
+                    <!-- Next and Previous Buttons -->
+                    <a class="prev" onclick="plusSlidesSecurity(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlidesSecurity(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <!-- The dots/circles-->
+                <div style="text-align:center">
+                    <span class="dot-security" onclick="currentSlideSecurity(1)"></span>
+                    <span class="dot-security" onclick="currentSlideSecurity(2)"></span>
+                    <span class="dot-security" onclick="currentSlideSecurity(3)"></span>
+                    <span class="dot-security" onclick="currentSlideSecurity(4)"></span>
+                    <span class="dot-security" onclick="currentSlideSecurity(5)"></span>
+                </div>
+
+            </p>
+            <p><b>Skills Used</b>: Network Infrastructure, Blue Iris, IP Security Cameras, AI-Based Video Analytics, System Administration, Troubleshooting, Wireless Networking</p>
+
+        </div>
+
+        <!-- Lifeguard Spot It -->
+        <div class="project-details" id="lifeguard-spot-it">
+            <h2>Lifeguard Spot It - Enhancing Training</h2>
+            <p>
+                Training should be engaging, immersive, and impactful. To reinforce scanning techniques, I designed 'Lifeguard Spot It!' a custom game that transforms lifeguard
+                skills into an interactive experience. Using discrete mathematics and Python, I was able to make a lifeguard themed Spot It! card deck, making training both educational and fun.
+                By blending creativity with training, I strive to ensure lifeguards are confident, prepared, and ready to make a difference.
+            </p>
+
+            <!-- Slideshow container for Lifeguard Spot It -->
+            <div class="slideshow-container lifeguard-slideshow">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides-lifeguard fade">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="SpotItLifeguardCards.png" style="width:100%" alt="Lifeguard Spot It Cards example">
+                </div>
+
+                <div class="mySlides-lifeguard fade">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="SpotItDeckV1.jpeg" style="width:100%" alt="Lifeguard Spot It Cards example deck">
+                </div>
+
+                <div class="mySlides-lifeguard fade">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="SpotItLifeguardPythonScriptCode.png" style="width:100%" alt="Lifeguard Spot It Python Script Code glimpse">
+                </div>
+
+                <div class="mySlides-lifeguard fade">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="SpotItLifeguardPythonImages.png" style="width:100%" alt="Lifeguard Spot It Python Script image set">
+                </div>
+
+                <!-- Next and Previous Buttons -->
+                <a class="prev" onclick="plusSlidesLifeguard(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlidesLifeguard(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot-lifeguard" onclick="currentSlideLifeguard(1)"></span>
+                <span class="dot-lifeguard" onclick="currentSlideLifeguard(2)"></span>
+                <span class="dot-lifeguard" onclick="currentSlideLifeguard(3)"></span>
+                <span class="dot-lifeguard" onclick="currentSlideLifeguard(4)"></span>
+            </div>
+
+
+            <p><b>Skills Used</b>: Python, UI/UX, Discrete Math</p>
+        </div>
+
+
+
+        <!-- VR Project -->
+        <!--<div class="project-details" id="vr-project">
+    <h2>Start of My VR Project</h2>
+    <p>
+        Exploring immersive virtual reality experiences, focusing on building
+        interactive environments for training simulations.
+    </p>
+
+    <!-- Slideshow Container for VR Project -->
+        <!--<div class="slideshow-container vr-slideshow">
+
+    <!-- Full-width images with number and caption text -->
+        <!--<div class="mySlides-vr fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="vr1.jpg" style="width:100%" alt="VR Project Screenshot 1">
+    </div>
+
+    <div class="mySlides-vr fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="vr2.jpg" style="width:100%" alt="VR Project Screenshot 2">
+    </div>
+
+    <div class="mySlides-vr fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="vr3.jpg" style="width:100%" alt="VR Project Screenshot 3">
+    </div>
+
+    <!-- Next and Previous Buttons -->
+        <!--<a class="prev" onclick="plusSlidesVr(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlidesVr(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+        <!--<div style="text-align:center">
+        <span class="dot-vr" onclick="currentSlideVr(1)"></span>
+        <span class="dot-vr" onclick="currentSlideVr(2)"></span>
+        <span class="dot-vr" onclick="currentSlideVr(3)"></span>
+    </div>
+
+
+
+    <p>Technologies Used: Unity, C#, VR Headset</p>
+
+    </div> -->
+        <!-- Theme Park Project -->
+        <div class="project-details" id="theme-park-project">
+            <h2>Halloween Heist - Themed Entertainment Association</h2>
+            <p>
+                I led the creation of The Halloween Heist, the first-ever themed scavenger hunt for the Themed Entertainment Association at UC,
+                transforming storytelling and technology into an immersive experience. With just one week to plan, my team and I designed an interactive,
+                narrative-driven event that utilized NFC technology to enhance engagement, demonstrating how creativity and innovation can bring themed entertainment to life. <br /><br />
+            </p>
+
+            <!-- Slideshow container for Theme Park Project -->
+            <div class="slideshow-container theme-park-slideshow">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides-theme fade">
+                    <div class="numbertext">1 / 7</div>
+                    <img src="HalloweenHeistHero.jpg" style="width:100%" alt="The Halloween Heist Winners">
+                </div>
+
+                <div class="mySlides-theme fade">
+                    <div class="numbertext">2 / 7</div>
+                    <img src="HalloweenHeistHero1.jpg" style="width:100%" alt="The Halloween Heist Winners">
+                </div>
+
+                <div class="mySlides-theme fade">
+                    <div class="numbertext">3 / 7</div>
+                    <img src="HalloweenHeistInvestagativeInfo.jpg" style="width:100%" alt="The Halloween Heist Winners">
+                </div>
+
+
+                <div class="mySlides-theme fade">
+                    <div class="numbertext">4 / 7</div>
+                    <img src="HalloweenHeistMap.jpg" style="width:100%" alt="The Halloween Heist Winners">
+                </div>
+
+                <div class="mySlides-theme fade">
+                    <div class="numbertext">5 / 7</div>
+                    <img src="TEAHeistWinners.jpg" style="width:100%" alt="The Halloween Heist Winners">
+                </div>
+
+                <div class="mySlides-theme fade">
+                    <div class="numbertext">6 / 7</div>
+                    <img src="TEAHeistGroupPicture.jpg" style="width:100%" alt="Top 3 groups who solved the Heist">
+                </div>
+
+                <div class="mySlides-theme fade">
+                    <div class="numbertext">7 / 7</div>
+                    <img src="TEAHeistImage.jpg" style="width:100%" alt="2024-2025 TEA@UC Executive Board">
+                </div>
+
+                <!-- Next and Previous Buttons -->
+                <a class="prev" onclick="plusSlidesTheme(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlidesTheme(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot-theme" onclick="currentSlideTheme(1)"></span>
+                <span class="dot-theme" onclick="currentSlideTheme(2)"></span>
+                <span class="dot-theme" onclick="currentSlideTheme(3)"></span>
+                <span class="dot-theme" onclick="currentSlideTheme(4)"></span>
+                <span class="dot-theme" onclick="currentSlideTheme(5)"></span>
+                <span class="dot-theme" onclick="currentSlideTheme(6)"></span>
+                <span class="dot-theme" onclick="currentSlideTheme(7)"></span>
+            </div>
+
 
             <p>
-                Learn more about me by
-                <a href="marshallnoveansresume.pdf" target="_blank">checking out my resume!</a>
+                Can you solve the Heist?  <a href="https://lnkd.in/gpgTSjnZ" target="_blank"> TEA@UC Halloween Heist</a>
             </p>
-
+            <p><b>Skills Used</b>: Event Managment, Creative Storytelling, Technology Integration and Experimentation, Collaboration, Problem solving</p>
 
         </div>
 
@@ -158,8 +542,8 @@
             </div>
             <div class="footer-links">
                 <a href="index.html">Home</a> |
-                <a href="projects.html">Projects</a> |
-                <a href="#.html">About</a>
+                <a href="#.html">Projects</a> |
+                <a href="about.html">About</a>
             </div>
             <div class="footer-copy">
                 © 2025 Marshall Novean. All Rights Reserved.
