@@ -1,766 +1,259 @@
+let slideIndex = 1;
+showSlides(slideIndex);
 
-/* General Styles */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #fff;
+// Next/Previous Controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
 }
 
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+// Thumbnail Navigation
+function currentSlide(n) {
+    showSlides(slideIndex = n);
 }
 
-/*Why did I decide to start this a 11 PM for Fun on a Friday night like be so real I had nothing better to do? */
+function showSlides(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides");
+    let dots = document.querySelectorAll(".dot");
 
-/* Navbar */
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: #111; 
-}
+    slides.forEach(slide => {
+        slide.style.display = "none";
 
-.logo a {
-    text-decoration: none;
-    color: white !important; 
-    font-size: 24px;
-    font-weight: bold;
-}
-
-    .logo a:visited,
-    .logo a:active,
-    .logo a:hover {
-        color: white !important;
-    }
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-    .nav-links li a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-
-/* Hero Section */
-.hero {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    background: linear-gradient(135deg, #ff00ff, #ff6600);
-    padding: 80px 10%;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-    overflow: visible;
-    margin-bottom: 0;
-}
-
-    /* SVG Fun things on the Background  :) it adds some pazae to the main page!*/
-    .hero::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url('curved-lines.svg') no-repeat center;
-        background-size: cover;
-        opacity: 0.4;
-        z-index: 0;
-    }
-
-/* Hero Content */
-.hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    gap: 15px;
-}
-
-
-    .hero-content a {
-        display: inline-block;
-        padding: 10px 20px;
-        background: #000;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        text-align: center;
-        transition: 0.3s ease-in-out;
-    }
-
-.hero h1 {
-    font-size: 60px; 
-}
-
-.hero-content h1 {
-    margin-bottom: 10px; 
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Hero Image */
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    max-width: 500px;
-    overflow: visible;
-}
-
-    .hero-image img {
-        width: 100%;
-        height: auto;
-        max-width: 450px;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    }
-
-/* Button */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* Medium screens */
-@media (max-width: 1024px) {
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 50px 5%;
-    }
-        .hero h1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            width: 100%;
-            text-align: center;
+        // Pause all videos when switching slides
+        let video = slide.querySelector("video");
+        if (video) {
+            video.pause();
+            video.currentTime = 0; // Reset to beginning
         }
+    });
 
+    dots.forEach(dot => dot.classList.remove("active"));
 
-    .hero-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        flex-wrap: wrap;
-        width: 100%;
-        margin-bottom: 20px;
-        padding-bottom: 0;
-        z-index: 10;
-    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
 
-    .hero-image {
-        max-width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
+    let currentSlide = slides[slideIndex - 1];
+    let img = currentSlide.querySelector("img");
+    let caption = currentSlide.querySelector(".caption-text");
 
-        .hero-image img {
-            width: 100%;
-            max-width: 400px;
-        }
-
-    .footer {
-        width: 85%; 
-        padding: 15px 5%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .footer-content {
-        width: 100%;
-        max-width: 400px;
-        text-align: center;
-    }
-
-    .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .footer-copy {
-        font-size: 10px;
-        text-align: center;
-        width: 100%;
-    }
-
-}
-
-
-/* Small screns because we need to have mobile for the world to see. At least that is what I am telling myself*/
-@media (max-width: 780px) {
-    .hero {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .hero h1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px; 
-        font-size: 40px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    .hero-image {
-        max-width: 100%;
-    }
-
-        .hero-image img {
-            max-width: 70%;
-            height: auto;
-        }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        z-index: 10;
-        margin-top: 10px;
-    }
-
-        .hero-buttons a {
-            width: 100%;
-            max-width: 250px;
-        }
-
-    .btn {
-        padding: 10px 10px;
-        font-size: 14px;
-    }
-
-    .footer {
-        width: 90%; 
-        padding: 15px 5%;
-        margin-left: auto;
-        margin-right: auto;
+    if (img && caption) {
+        caption.textContent = img.alt;
     }
 }
 
-/* Projects Page this is more fun than just talking at least*/
+let slideIndex360 = 1;
+showSlides360(slideIndex360);
 
-.projects-page {
-    padding: 10px 10%;
-    text-align: center;
-}
-    .projects-page h1 {
-        font-size: 60px;
-        font-weight: bold;
-        padding: 40px 0;
-        margin: 0 auto;
-    }
-
-/* Project Sections */
-.project-details {
-    background: linear-gradient(135deg, #ff00ff, #ff6600);
-    padding: 40px;
-    border-radius: 10px;
-    margin-bottom: 50px;
-    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.1);
-    text-align: left;
-    color: #fff;
+// Next/Previous Controls
+function plusSlides360(n) {
+    showSlides360(slideIndex360 += n);
 }
 
-    .project-details h2 {
-        font-size: 36px;
-        margin-bottom: 10px;
-        color: #fff;
-    }
-
-    .project-details p {
-        font-size: 18px;
-        line-height: 1.5;
-        opacity: 0.9;
-        color: #fff;
-    }
-
-/* Project Gallery */
-.project-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-    gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
+// Thumbnail Navigation
+function currentSlide360(n) {
+    showSlides360(slideIndex360 = n);
 }
 
-    .project-gallery img {
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease-in-out;
-    }
+function showSlides360(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-360");
+    let dots = document.querySelectorAll(".dot-360");
 
-       /* Hovr effect */
-        .project-gallery img:hover {
-            transform: scale(1.05);
-        }
+    if (n > slides.length) { slideIndex360 = 1; }
+    if (n < 1) { slideIndex360 = slides.length; }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .project-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-}
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
 
-/*Why did I think it would be a good idea to try and quiclky add a slideshow that not as easy as the youtube video but they have probs done it a lot before I truend a 25 min video into 4 hours but it looks so gooooooood!*/
-
-.slideshow-container {
-    max-width: 1000px; 
-    position: relative;
-    margin: auto;
-    background: #000; 
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/* Hide the images I think it wasnt working so come back to this later */
-.mySlides {
-    display: none;
-    text-align: center;
-}
-
-    .mySlides img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    }
-
-/* Navigation buttons */
-.prev, .next {
-    position: absolute;
-    top: 50%; 
-    transform: translateY(-50%); 
-    width: auto;
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 20px;
-    border-radius: 5px;
-    transition: 0.3s;
-    user-select: none;
-    z-index: 10; 
-}
-
-/* Position left and right arrows come back to this because they arnt looking right all the time*/
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-    /* It might have to do witht thies hover visiblity thing come back to this when its not 4 AM */
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-/* Cation text */
-.numbertext {
-    color: #ffcc00;
-    font-size: 18px;
-    font-weight: bold
-    padding: 12px 12px;
-    position: absolute;
-    Top: 1;
-}
-
-/* Dot navigation  would it be fun to add like difern shapes?*/
-.dots-container {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dot {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.dot-360 {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.dot-Troubleshooting {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.dot-security {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.dots-container {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dot-lifeguard {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-.dot-theme {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-.dot-vr {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.dot-about {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-    .active, .dot-about:hover {
-        background-color: #717171;
-    }
-
-    .active-vr, .dot-vr:hover {
-        background-color: #717171;
-    }
-
-    .active, .dot-theme:hover {
-        background-color: #717171;
-    }
-
-    .active, .dot-lifeguard:hover {
-        background-color: #717171;
-    }
-
-    .active, .dot-security:hover {
-        background-color: #717171;
-    }
-
-    .active, .dot-360:hover {
-    background-color: #717171;
-    }
-
-    .active, .dot-Troubleshooting:hover {
-        background-color: #717171;
-    }
-
-    .active, .dot:hover {
-        background-color: #717171;
-    }
-
-/* Fade effect  for an added benifit of the user also it was the only thing that I could get working for like 30 minutes and it keept me going*/
-.fade {
-    animation: fade 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-
-    to {
-        opacity: 1;
-    }
+    slides[slideIndex360 - 1].style.display = "block";
+    dots[slideIndex360 - 1].classList.add("active");
 }
 
 
 
-/* About Pagr Background */
 
-body.about-page {
-    background: linear-gradient(135deg, #0077ff, #00ff99); 
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    color: #fff;
+let slideIndexTroubleshooting = 1;
+showSlidesTroubleshooting(slideIndexTroubleshooting);
+
+// Next/Previous Controls
+function plusTroubleshooting(n) {
+    showSlidesTroubleshooting(slideIndexTroubleshooting += n);
+}
+
+// Thumbnail Navigation
+function currentSlideTroubleshooting(n) {
+    showSlidesTroubleshooting(slideIndexTroubleshooting = n);
+}
+
+function showSlidesTroubleshooting(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-Troubleshooting");
+    let dots = document.querySelectorAll(".dot-Troubleshooting");
+
+    if (n > slides.length) { slideIndexTroubleshooting = 1; }
+    if (n < 1) { slideIndexTroubleshooting = slides.length; }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[slideIndexTroubleshooting - 1].style.display = "block";
+    dots[slideIndexTroubleshooting - 1].classList.add("active");
 }
 
 
-/* Navbar  */
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: #111;
+
+let slideIndexSecurity = 1;
+showSlidesSecurity(slideIndexSecurity);
+
+// Next/Previous Controls
+function plusSlidesSecurity(n) {
+    showSlidesSecurity(slideIndexSecurity += n);
+}
+
+// Thumbnail Navigation
+function currentSlideSecurity(n) {
+    showSlidesSecurity(slideIndexSecurity = n);
+}
+
+function showSlidesSecurity(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-security");
+    let dots = document.querySelectorAll(".dot-security");
+
+    if (n > slides.length) { slideIndexSecurity = 1; }
+    if (n < 1) { slideIndexSecurity = slides.length; }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[slideIndexSecurity - 1].style.display = "block";
+    dots[slideIndexSecurity - 1].classList.add("active");
 }
 
 
-/* About Page Header*/
 
-.about-header {
-    padding: 10px 10%;
-    text-align: center;
-    background: transparent; 
+
+let slideIndexLifeguard = 1;
+showSlidesLifeguard(slideIndexLifeguard);
+
+// Next/Previous Controls
+function plusSlidesLifeguard(n) {
+    showSlidesLifeguard(slideIndexLifeguard += n);
 }
 
-    .about-header h1 {
-        font-size: 60px;
-        font-weight: bold;
-        padding: 30px 0;
-        margin: 0 auto;
-    }
-
-/* About Page Content */
-
-
-.about-details {
-    background: background: rgba(0, 0, 0, 0.8);
-    padding: 40px;
-    border-radius: 10px;
-    margin-bottom: 50px;
-    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.1);
-    text-align: left;
-    color: #fff;
+// Thumbnail Navigation
+function currentSlideLifeguard(n) {
+    showSlidesLifeguard(slideIndexLifeguard = n);
 }
 
-    .about-details h2 {
-        font-size: 36px;
-        margin-bottom: 10px;
-        color: #fff;
-    }
+function showSlidesLifeguard(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-lifeguard");
+    let dots = document.querySelectorAll(".dot-lifeguard");
 
-    .about-details p {
-        font-size: 18px;
-        line-height: 1.5;
-        opacity: 0.9;
-        color: #fff;
-    }
+    if (n > slides.length) { slideIndexLifeguard = 1; }
+    if (n < 1) { slideIndexLifeguard = slides.length; }
 
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
 
-/* General Styles */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
+    slides[slideIndexLifeguard - 1].style.display = "block";
+    dots[slideIndexLifeguard - 1].classList.add("active");
 }
 
 
-/* Navbar */
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: #111; 
+let slideIndexTheme = 1;
+showSlidesTheme(slideIndexTheme);
+
+// Next/Previous Controls
+function plusSlidesTheme(n) {
+    showSlidesTheme(slideIndexTheme += n);
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+// Thumbnail Navigation
+function currentSlideTheme(n) {
+    showSlidesTheme(slideIndexTheme = n);
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+function showSlidesTheme(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-theme");
+    let dots = document.querySelectorAll(".dot-theme");
+
+    if (n > slides.length) { slideIndexTheme = 1; }
+    if (n < 1) { slideIndexTheme = slides.length; }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[slideIndexTheme - 1].style.display = "block";
+    dots[slideIndexTheme - 1].classList.add("active");
 }
 
-    .nav-links li a {
-        color: #fff;
-        text-decoration: none;
-    }
 
+let slideIndexVr = 1;
+showSlidesVr(slideIndexVr);
 
-/* Footer  who know that the simple footer would be causing me so many CSS issues and it was in teh footer */
-.footer {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 15px 5%;
-    font-size: 14px;
-    width: 58%; 
-    max-width: 100vw;
-    position: relative;
-    bottom: 0;
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto; 
-    margin-right: auto; 
+// Next/Previous Controls
+function plusSlidesVr(n) {
+    showSlidesVr(slideIndexVr += n);
 }
 
-.footer-content {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; 
+// Thumbnail Navigation
+function currentSlideVr(n) {
+    showSlidesVr(slideIndexVr = n);
 }
 
-.footer-linkedin a {
-    color: #ffcc00 !important; 
-    font-weight: bold;
-    text-decoration: none;
-    display: block; 
-    text-align: center; 
+function showSlidesVr(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-vr");
+    let dots = document.querySelectorAll(".dot-vr");
+
+    if (n > slides.length) { slideIndexVr = 1; }
+    if (n < 1) { slideIndexVr = slides.length; }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active-vr"));
+
+    slides[slideIndexVr - 1].style.display = "block";
+    dots[slideIndexVr - 1].classList.add("active-vr");
 }
 
-    .footer-linkedin a:hover {
-        text-decoration: underline;
-    }
 
-.footer-links {
-    display: flex;
-    justify-content: center; 
-    gap: 10px;
-    flex-wrap: wrap; 
+
+
+
+let slideIndexAbout = 1;
+showSlidesAbout(slideIndexAbout);
+
+// Next/Previous Controls
+function plusSlidesAbout(n) {
+    showSlidesAbout(slideIndexAbout += n);
 }
 
-.footer-copy {
-    font-size: 12px;
-    text-align: center;
-    width: 100%;
+// Thumbnail Controls
+function currentSlideAbout(n) {
+    showSlidesAbout(slideIndexAbout = n);
 }
 
-.footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+function showSlidesAbout(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-about");
+    let dots = document.querySelectorAll(".dot-about");
+
+    if (n > slides.length) { slideIndexAbout = 1; }
+    if (n < 1) { slideIndexAbout = slides.length; }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[slideIndexAbout - 1].style.display = "block";
+    dots[slideIndexAbout - 1].classList.add("active");
 }
-
-    .footer a:hover {
-        text-decoration: underline;
-    }
-
-
-ul {
-
-    margin: 20px 0; 
-    color: #fff; 
-    font-size: 18px; 
-    line-height: 1.6;
-}
-
-li {
-    margin-bottom: 10px; 
-    color: #fff;
-}
-
-.caption-text {
-    color: #ffff;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: center;
-    padding: 5px;
-
-}
-
-@media (max-width: 768px) {
-    .footer {
-        font-size: 12px;
-        padding: 10px;
-    }
-}
-
 
 
