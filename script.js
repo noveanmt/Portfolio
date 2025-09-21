@@ -73,6 +73,39 @@ function showSlides360(n) {
 }
 
 
+
+
+let slideIndexTroubleshooting = 1;
+showSlidesTroubleshooting(slideIndexTroubleshooting);
+
+// Next/Previous Controls
+function plusTroubleshooting(n) {
+    showSlidesTroubleshooting(slideIndexTroubleshooting += n);
+}
+
+// Thumbnail Navigation
+function currentSlideTroubleshooting(n) {
+    showSlidesTroubleshooting(slideIndexTroubleshooting = n);
+}
+
+function showSlidesTroubleshooting(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides-Troubleshooting");
+    let dots = document.querySelectorAll(".dot-Troubleshooting");
+
+    if (n > slides.length) { slideIndexTroubleshooting = 1; }
+    if (n < 1) { slideIndexTroubleshooting = slides.length; }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[slideIndexTroubleshooting - 1].style.display = "block";
+    dots[slideIndexTroubleshooting - 1].classList.add("active");
+}
+
+
+
+
 let slideIndexSecurity = 1;
 showSlidesSecurity(slideIndexSecurity);
 
@@ -102,6 +135,8 @@ function showSlidesSecurity(n) {
 }
 
 
+
+
 let slideIndexLifeguard = 1;
 showSlidesLifeguard(slideIndexLifeguard);
 
@@ -129,6 +164,8 @@ function showSlidesLifeguard(n) {
     slides[slideIndexLifeguard - 1].style.display = "block";
     dots[slideIndexLifeguard - 1].classList.add("active");
 }
+
+
 
 let slideIndexTheme = 1;
 showSlidesTheme(slideIndexTheme);
@@ -186,6 +223,8 @@ function showSlidesVr(n) {
     slides[slideIndexVr - 1].style.display = "block";
     dots[slideIndexVr - 1].classList.add("active-vr");
 }
+
+
 
 
 
